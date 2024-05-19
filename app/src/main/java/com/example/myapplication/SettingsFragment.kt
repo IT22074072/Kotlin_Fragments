@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Spinner
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,14 +43,15 @@ class SettingsFragment : Fragment() {
         val spinner:Spinner = rootView.findViewById(R.id.spinner)
         val saveButton:Button = rootView.findViewById(R.id.button3)
 
+        val viewModel = ViewModelProvider(requireActivity())[FragmentViewModel::class.java]
         saveButton.setOnClickListener(){
             when(spinner.selectedItem){
                 "black" -> {}
-                "background 1" -> {}
-                "background 2" -> {}
-                "background 3" -> {}
-                "background 4" -> {}
-                "background 5" -> {}
+                "background 1" -> {viewModel.setBackgroundColor(R.color.background1)}
+                "background 2" -> {viewModel.setBackgroundColor(R.color.background2)}
+                "background 3" -> {viewModel.setBackgroundColor(R.color.background3)}
+                "background 4" -> {viewModel.setBackgroundColor(R.color.background4)}
+                "background 5" -> {viewModel.setBackgroundColor(R.color.background5)}
 
             }
         }
