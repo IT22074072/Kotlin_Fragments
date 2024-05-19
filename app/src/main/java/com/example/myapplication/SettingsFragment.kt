@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Spinner
+import androidx.lifecycle.findViewTreeViewModelStoreOwner
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +37,23 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_settings, container, false)
+
+        val spinner:Spinner = rootView.findViewById(R.id.spinner)
+        val saveButton:Button = rootView.findViewById(R.id.button3)
+
+        saveButton.setOnClickListener(){
+            when(spinner.selectedItem){
+                "black" -> {}
+                "background 1" -> {}
+                "background 2" -> {}
+                "background 3" -> {}
+                "background 4" -> {}
+                "background 5" -> {}
+
+            }
+        }
+        return rootView
     }
 
     companion object {
