@@ -46,12 +46,12 @@ class SettingsFragment : Fragment() {
         val viewModel = ViewModelProvider(requireActivity())[FragmentViewModel::class.java]
         saveButton.setOnClickListener(){
             when(spinner.selectedItem){
-                "black" -> {}
-                "background 1" -> {viewModel.setBackgroundColor(R.color.background1)}
-                "background 2" -> {viewModel.setBackgroundColor(R.color.background2)}
-                "background 3" -> {viewModel.setBackgroundColor(R.color.background3)}
-                "background 4" -> {viewModel.setBackgroundColor(R.color.background4)}
-                "background 5" -> {viewModel.setBackgroundColor(R.color.background5)}
+                "blank" -> {}
+                "Background 1" -> {viewModel.setBackgroundColor(R.color.background1)}
+                "Background 2" -> {viewModel.setBackgroundColor(R.color.background2)}
+                "Background 3" -> {viewModel.setBackgroundColor(R.color.background3)}
+                "Background 4" -> {viewModel.setBackgroundColor(R.color.background4)}
+                "Background 5" -> {viewModel.setBackgroundColor(R.color.background5)}
 
             }
         }

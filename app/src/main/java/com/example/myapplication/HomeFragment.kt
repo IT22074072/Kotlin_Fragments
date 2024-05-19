@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,6 +44,14 @@ class HomeFragment : Fragment() {
         imageView.setOnClickListener(){
             Toast.makeText(requireActivity(), "Home button Clicked", Toast.LENGTH_LONG).show()
         }
+
+
+        val viewModel = ViewModelProvider(requireActivity())[FragmentViewModel::class.java]
+
+        viewModel.getBackgroundColor().observe(requireActivity()){
+            rootView.setBackgroundResource(it)
+        }
+
         return rootView
     }
 
